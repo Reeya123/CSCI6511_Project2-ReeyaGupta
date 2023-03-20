@@ -83,12 +83,14 @@ def csp_coloring(graph: MyGraph, num_colors: int) -> dict:
 
     assignment = {}
     return backtrack()
-graph, num_colors = parse_input_file()
-solution = csp_coloring(graph, num_colors)
-print(solution)
-if solution is not None:
-    print('Solution:')
-    for vertex, color in solution.items():
-        print(f'Vertex {vertex}: Color {color}')
-else:
-    print('No solution could be found')
+if __name__ == '__main__':
+    
+    graph, num_colors = parse_input_file()
+    solution = csp_coloring(graph, num_colors)
+    print(solution)
+    if solution is not None:
+        print('Solution:')
+        for vertex, color in solution.items():
+            print(f'Vertex {vertex}: Color {color}')
+    else:
+        print('No solution could be found')
